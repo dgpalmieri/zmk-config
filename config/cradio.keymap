@@ -18,7 +18,7 @@
 / }
     macros
     {
-        windows_screenshot: win_sc {
+        win_sc: windows_screenshot  {
             compatible = "zmk,behavior-macro";
             bindings = <&macro_press &kp RGUI &kp LSHFT>,
                        <&macro_tap &kp S>,
