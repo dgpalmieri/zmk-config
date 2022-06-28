@@ -22,6 +22,7 @@
         {
             compatible = "zmk,behavior-macro";
             label = "windows_screenshot";
+            #binding-cells = <0>;
             bindings = <&macro_press &kp RGUI &kp LSHFT>,
                        <&macro_tap &kp S>,
                        <&macro_release &kp RGUI &kp LSHFT>;
