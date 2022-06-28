@@ -15,19 +15,29 @@
      tapping_term_ms = <250>;
 };
 
-}
-   combos
-   {
-       compatible = "zmk,combos";
+/ }
+    macros
+    {
+        windows_screenshot: win_sc {
+            compatible = "zmk,behavior-macro";
+            bindings = <&macro_press &kp RGUI &kp LSHFT>,
+                       <&macro_tap &kp S>,
+                       <&macro_release &kp RGUI &kp LSHFT>;
+        };
+    };
 
-       combo_screenshot
-       {
-           timeout-ms = <50>;
-           key-positions = <12 13>;
-           bindings = <&kp RGUI &kp LSFT &kp S>;
-       };
-   };
-}
+    combos
+    {
+        compatible = "zmk,combos";
+
+        combo_screenshot
+        {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&win_sc>;
+        };
+    };
+};
 
 
         keymap {
