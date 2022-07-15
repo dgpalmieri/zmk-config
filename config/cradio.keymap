@@ -45,14 +45,21 @@
             timeout-ms = <100>;
             layers = <0>;
             key-positions = <11 12>;
-            bindings = <&kp LC(LS(C))>;
+            bindings = <&kp LC(C)>;
         };
-        combo_paste
+        combo_terminal-paste
         {
             timeout-ms = <100>;
             layers = <0>;
             key-positions = <12 13>;
             bindings = <&kp LC(LS(V))>;
+        };
+        combo_windows-paste
+        {
+            timeout-ms = <100>;
+            layers = <2>;
+            key-positions = <12 13>;
+            bindings = <&kp LC(V)>;
         };
         combo_capsword
         {
