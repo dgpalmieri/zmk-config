@@ -68,6 +68,14 @@
             key-positions = <24 25>;
             bindings = <&caps_word>;
         };
+        combo_esc
+        {
+            timeout-ms = <100>;
+            layers = <0>;
+            key-positions = <16 17>;
+            bindings = <&kp ESC>;
+        };
+
     };
 
     keymap {
