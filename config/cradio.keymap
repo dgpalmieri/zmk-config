@@ -84,7 +84,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
             layers = <0>;
             key-positions = <0 9>;
             bindings = <&win_sc>;
-            COMBO_HOOK;
+            COMBO_HOOK
         };
         combo_copy
         {
@@ -92,7 +92,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
             layers = <0>;
             key-positions = <11 12>;
             bindings = <&kp LC(C)>;
-            COMBO_HOOK;
+            COMBO_HOOK
         };
         combo_terminal-paste
         {
@@ -100,7 +100,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
             layers = <0>;
             key-positions = <12 13>;
             bindings = <&kp LC(LS(V))>;
-            COMBO_HOOK;
+            COMBO_HOOK
         };
         combo_windows-paste
         {
@@ -108,7 +108,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
             layers = <2>;
             key-positions = <12 13>;
             bindings = <&kp LC(V)>;
-            COMBO_HOOK;
+            COMBO_HOOK
         };
         combo_capsword
         {
@@ -116,7 +116,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
             layers = <0>;
             key-positions = <24 25>;
             bindings = <&caps_word>;
-            COMBO_HOOK;
+            COMBO_HOOK
         };
         combo_esc
         {
@@ -124,7 +124,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
             layers = <0>;
             key-positions = <16 17>;
             bindings = <&kp ESC>;
-            COMBO_HOOK;
+            COMBO_HOOK
         };
 
     };
