@@ -15,6 +15,9 @@
 #define THUMBS LH1 LH0 RH0 RH1                                              // thumb keys
 
 #define QUICK_TAP_MS 175
+#define COMBO_TERM_FAST 20
+#define COMBO_TERM_SLOW 35
+#define COMBO_HOOK global-quick-tap-ms = <75>;
 
 #define ZMK_HELPER_STRINGIFY(x) #x
 #define ZMK_BEHAVIOR(name, type, ...) \
@@ -77,45 +80,51 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
         combo_screenshot
         {
-            timeout-ms = <100>;
+            timeout-ms = COMBO_TERM_SLOW;
             layers = <0>;
             key-positions = <0 9>;
             bindings = <&win_sc>;
+            COMBO_HOOK;
         };
         combo_copy
         {
-            timeout-ms = <100>;
+            timeout-ms = COMBO_TERM_SLOW;
             layers = <0>;
             key-positions = <11 12>;
             bindings = <&kp LC(C)>;
+            COMBO_HOOK;
         };
         combo_terminal-paste
         {
-            timeout-ms = <100>;
+            timeout-ms = COMBO_TERM_SLOW;
             layers = <0>;
             key-positions = <12 13>;
             bindings = <&kp LC(LS(V))>;
+            COMBO_HOOK;
         };
         combo_windows-paste
         {
-            timeout-ms = <100>;
+            timeout-ms = COMBO_TERM_SLOW;
             layers = <2>;
             key-positions = <12 13>;
             bindings = <&kp LC(V)>;
+            COMBO_HOOK;
         };
         combo_capsword
         {
-            timeout-ms = <100>;
+            timeout-ms = COMBO_TERM_SLOW;
             layers = <0>;
             key-positions = <24 25>;
             bindings = <&caps_word>;
+            COMBO_HOOK;
         };
         combo_esc
         {
-            timeout-ms = <100>;
+            timeout-ms = COMBO_TERM_SLOW;
             layers = <0>;
             key-positions = <16 17>;
             bindings = <&kp ESC>;
+            COMBO_HOOK;
         };
 
     };
