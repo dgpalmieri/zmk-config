@@ -80,7 +80,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
         combo_screenshot
         {
-            timeout-ms = COMBO_TERM_SLOW;
+            timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
             key-positions = <0 9>;
             bindings = <&win_sc>;
@@ -88,7 +88,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
         };
         combo_copy
         {
-            timeout-ms = COMBO_TERM_SLOW;
+            timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
             key-positions = <11 12>;
             bindings = <&kp LC(C)>;
@@ -96,7 +96,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
         };
         combo_terminal-paste
         {
-            timeout-ms = COMBO_TERM_SLOW;
+            timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
             key-positions = <12 13>;
             bindings = <&kp LC(LS(V))>;
@@ -104,7 +104,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
         };
         combo_windows-paste
         {
-            timeout-ms = COMBO_TERM_SLOW;
+            timeout-ms = <COMBO_TERM_SLOW>;
             layers = <2>;
             key-positions = <12 13>;
             bindings = <&kp LC(V)>;
@@ -112,7 +112,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
         };
         combo_capsword
         {
-            timeout-ms = COMBO_TERM_SLOW;
+            timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
             key-positions = <24 25>;
             bindings = <&caps_word>;
@@ -120,7 +120,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
         };
         combo_esc
         {
-            timeout-ms = COMBO_TERM_SLOW;
+            timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
             key-positions = <16 17>;
             bindings = <&kp ESC>;
