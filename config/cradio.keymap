@@ -14,6 +14,8 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
+#define QUICK_TAP_MS 175
+
 #define ZMK_HELPER_STRINGIFY(x) #x
 #define ZMK_BEHAVIOR(name, type, ...) \
     / { \
