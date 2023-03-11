@@ -135,10 +135,10 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
         default_layer
         {
             bindings = <
-                &kp Q      &kp W      &kp F           &kp P           &kp B                 &kp J        &kp L        &kp U        &kp Y      &kp SCLN
-                &kp A      &kp R      &kp S           &kp T           &kp G                 &kp M        &kp N        &kp E        &kp I      &kp O
-                &mt LSFT Z &kp X      &kp C           &kp D           &kp V                 &kp K        &kp H        &kp CMMA     &kp DOT    &mt RSFT RET
-                                                      &mo 1           &kp SPC               &kp LALT     &mo 2
+                &kp Q            &kp W             &kp F                 &kp P                  &kp B                 &kp J        &kp L               &kp U        &kp Y             &kp SCLN
+                &hml LGUI A      &hml LCTRL R      &hml LALT S           &hml LSHFT T           &kp G                 &kp M        &hmr RSHFT N        &hmr RALT E  &hmr RCTRL I      &hmr RGUI O
+                &kp Z            &kp X             &kp C                 &kp D                  &kp V                 &kp K        &kp H               &kp CMMA     &kp DOT           &kp RET
+                                                                         &mo 1                  &kp SPC               &kp LALT     &mo 2
             >;
         };
 
