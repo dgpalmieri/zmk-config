@@ -56,7 +56,7 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;           // requires PR #1423
         };
-    } // End @urob's config
+    }; // End @urob's config
     
     macros
     {
