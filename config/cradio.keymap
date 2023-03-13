@@ -19,34 +19,6 @@
 #define COMBO_TERM_SLOW 35
 #define COMBO_HOOK global-quick-tap-ms = <75>;
 
-
-behaviors {
-    hml: hml {  // left-hand HRMs
-        label = "hml";
-        flavor = "balanced";
-        tapping-term-ms = <280>;
-        quick-tap-ms = <QUICK_TAP_MS>;
-        global-quick-tap-ms = <150>;        // requires PR #1387
-        #binding-cells = <2>;
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_R THUMBS>;
-        hold-trigger-on-release;            // requires PR #1423
-    }
-
-    hmr: hmr {  // right-hand HRMs
-        label = "hmr";
-        flavor = "balanced";
-        tapping-term-ms = <280>;
-        quick-tap-ms = <QUICK_TAP_MS>;
-        global-quick-tap-ms = <150>;        // requires PR #1387
-        #binding-cells = <2>;
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_L THUMBS>;
-        hold-trigger-on-release;           // requires PR #1423
-    }
-}
-// End @urob's config
-
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <220>;
@@ -55,6 +27,35 @@ behaviors {
 };
 
 / {
+    behaviors
+    {
+        hml: hml
+        {  // left-hand HRMs
+            label = "hml";
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            global-quick-tap-ms = <150>;        // requires PR #1387
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;            // requires PR #1423
+        }
+
+        hmr: hmr 
+        {  // right-hand HRMs
+            label = "hmr";
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            global-quick-tap-ms = <150>;        // requires PR #1387
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;           // requires PR #1423
+        }
+    } // End @urob's config
+    
     macros
     {
         win_sc: windows_screenshot
@@ -80,6 +81,7 @@ behaviors {
             bindings = <&win_sc>;
             COMBO_HOOK
         };
+        
         combo_copy
         {
             timeout-ms = <COMBO_TERM_SLOW>;
@@ -88,6 +90,7 @@ behaviors {
             bindings = <&kp LC(C)>;
             COMBO_HOOK
         };
+        
         combo_terminal-paste
         {
             timeout-ms = <COMBO_TERM_SLOW>;
@@ -96,6 +99,7 @@ behaviors {
             bindings = <&kp LC(LS(V))>;
             COMBO_HOOK
         };
+        
         combo_windows-paste
         {
             timeout-ms = <COMBO_TERM_SLOW>;
@@ -104,6 +108,7 @@ behaviors {
             bindings = <&kp LC(V)>;
             COMBO_HOOK
         };
+        
         combo_capsword
         {
             timeout-ms = <COMBO_TERM_SLOW>;
@@ -112,6 +117,7 @@ behaviors {
             bindings = <&caps_word>;
             COMBO_HOOK
         };
+        
         combo_esc
         {
             timeout-ms = <COMBO_TERM_SLOW>;
