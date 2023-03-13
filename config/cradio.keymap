@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keypos_34keys.h"
 
-// Stolen verbatim from https://github.com/urob/zmk-config
+// Adapted from https://github.com/urob/zmk-config
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH1 LH0 RH0 RH1                                              // thumb keys
@@ -19,40 +19,32 @@
 #define COMBO_TERM_SLOW 35
 #define COMBO_HOOK global-quick-tap-ms = <75>;
 
-#define ZMK_HELPER_STRINGIFY(x) #x
-#define ZMK_BEHAVIOR(name, type, ...) \
-    / { \
-        behaviors { \
-            name: name { \
-                label = ZMK_HELPER_STRINGIFY(ZB_ ## name); \
-                ZMK_BEHAVIOR_CORE_ ## type; \
-                __VA_ARGS__ \
-            }; \
-        }; \
-    };
 
+behaviors {
+    hml: hml {  // left-hand HRMs
+        label = "hml";
+        flavor = "balanced";
+        tapping-term-ms = <280>;
+        quick-tap-ms = <QUICK_TAP_MS>;
+        global-quick-tap-ms = <150>;        // requires PR #1387
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <KEYS_R THUMBS>;
+        hold-trigger-on-release;            // requires PR #1423
+    }
 
-ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    global-quick-tap-ms = <150>;        // requires PR #1387
-    #binding-cells = <2>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
-    hold-trigger-on-release;            // requires PR #1423
-)
-
-ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    global-quick-tap-ms = <150>;        // requires PR #1387
-    #binding-cells = <2>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;            // requires PR #1423
-)
+    hmr: hmr {  // right-hand HRMs
+        label = "hmr";
+        flavor = "balanced";
+        tapping-term-ms = <280>;
+        quick-tap-ms = <QUICK_TAP_MS>;
+        global-quick-tap-ms = <150>;        // requires PR #1387
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <KEYS_L THUMBS>;
+        hold-trigger-on-release;           // requires PR #1423
+    }
+}
 // End @urob's config
 
 &mt {
