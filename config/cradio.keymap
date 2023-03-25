@@ -19,6 +19,15 @@
 #define COMBO_TERM_SLOW 35
 #define COMBO_HOOK global-quick-tap-ms = <75>;
 
+
+&caps_word {  // mods deactivate caps-word, requires PR #1441
+    /delete-property/ ignore-modifiers;
+};
+
+&num_word {   // num-word, requires PR #1441
+    layers = <4>;
+};
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <220>;
@@ -79,7 +88,7 @@
         {
             timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
-            key-positions = <0 9>;
+            key-positions = <LT0 RT4>;
             bindings = <&win_sc>;
             COMBO_HOOK
         };
@@ -88,7 +97,7 @@
         {
             timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
-            key-positions = <11 12>;
+            key-positions = <LM1 LM2>;
             bindings = <&kp LC(C)>;
             COMBO_HOOK
         };
@@ -97,7 +106,7 @@
         {
             timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
-            key-positions = <12 13>;
+            key-positions = <LM2 LM3>;
             bindings = <&kp LC(LS(V))>;
             COMBO_HOOK
         };
@@ -106,7 +115,7 @@
         {
             timeout-ms = <COMBO_TERM_SLOW>;
             layers = <2>;
-            key-positions = <12 13>;
+            key-positions = <LM2 LM3>;
             bindings = <&kp LC(V)>;
             COMBO_HOOK
         };
@@ -115,7 +124,7 @@
         {
             timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
-            key-positions = <24 25>;
+            key-positions = <LB4 RB0>;
             bindings = <&caps_word>;
             COMBO_HOOK
         };
@@ -124,7 +133,7 @@
         {
             timeout-ms = <COMBO_TERM_SLOW>;
             layers = <0>;
-            key-positions = <16 17>;
+            key-positions = <RM1 RM2>;
             bindings = <&kp ESC>;
             COMBO_HOOK
         };
@@ -140,7 +149,7 @@
                 &kp  Q      &kp  W       &kp  F          &kp  P          &kp B                 &kp J        &kp  L       &kp  U       &kp  Y       &kp  QUOT
                 &hml LGUI A &hml LCTRL R &hml LALT S     &hml LSHFT T    &kp G                 &kp M        &hmr RSHFT N &hmr RALT E  &hmr RCTRL I &hmr RGUI O
                 &kp  Z      &kp  X       &kp  C          &kp  D          &kp V                 &kp K        &kp  H       &kp  CMMA    &kp  DOT     &kp  RET
-                                                         &mo  1          &kp SPC               &kp LALT     &mo  2
+                                                         &mo  1          &kp SPC               &num_word    &mo  2
             >;
         };
 
@@ -163,7 +172,7 @@
             >;
         };
 
-        tri_layer {
+        double_layer {
             bindings = <
                 &kp NUM_1   &kp NUM_2    &kp NUM_3       &kp NUM_4       &kp NUM_5             &trans       &trans       &trans       &trans       &trans
                 &kp F1      &kp F2       &kp F3          &kp F4          &kp F5                &trans       &kp PG_UP    &kp C_VOL_UP &kp C_MUTE   &trans
@@ -171,6 +180,13 @@
                                                          &trans          &trans                &trans       &trans
             >;
         };
+
+        num_layer {
+            bindings = <
+                &trans          &kp NUM_7        &kp NUM_8       &kp NUM_9        &trans               &trans       &trans       &trans       &trans       &trans
+                &hml LGUI NUM_0 &hml LCTRL NUM_4 &hml LALT NUM_5 &hml LSHFT NUM_6 &trans               &trans       &trans       &trans       &trans       &trans
+                &trans          &kp NUM_1        &kp NUM_2       &kp NUM_3        &trans               &trans       &trans       &trans       &trans       &trans
+                                                                 &trans           &trans               &trans       &trans
 
     };
 };
