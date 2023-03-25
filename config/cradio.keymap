@@ -187,6 +187,8 @@
                 &hml LGUI NUM_0 &hml LCTRL NUM_4 &hml LALT NUM_5 &hml LSHFT NUM_6 &trans               &trans       &trans       &trans       &trans       &trans
                 &trans          &kp NUM_1        &kp NUM_2       &kp NUM_3        &trans               &trans       &trans       &trans       &trans       &trans
                                                                  &trans           &trans               &trans       &trans
+                >;
+        };
 
     };
 };
