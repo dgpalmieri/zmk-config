@@ -1,0 +1,77 @@
+/*                KEY POSITIONS
+  ╭─────────────────────╮ ╭─────────────────────╮
+  │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
+  │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
+  │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │
+  ╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯
+          ╰─────────────╯ ╰─────────────╯ */
+
+
+#define COMBO_HOOK
+#define COMBO_HOOK global-quick-tap-ms = <75>;
+
+#define COMBO_TERM_FAST 20
+#define COMBO_TERM_SLOW 35
+
+
+/ {
+    combos
+    {
+        compatible = "zmk,combos";
+
+        combo_screenshot
+        {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            layers = <0>;
+            key-positions = <LT4 RT0>;
+            bindings = <&win_sc>;
+            COMBO_HOOK
+        };
+        
+        combo_copy
+        {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            layers = <0>;
+            key-positions = <LM3 LM2>;
+            bindings = <&kp LC(C)>;
+            COMBO_HOOK
+        };
+        
+        combo_terminal-paste
+        {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            layers = <0>;
+            key-positions = <LM2 LM1>;
+            bindings = <&kp LC(LS(V))>;
+            COMBO_HOOK
+        };
+        
+        combo_windows-paste
+        {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            layers = <2>;
+            key-positions = <LM2 LM1>;
+            bindings = <&kp LC(V)>;
+            COMBO_HOOK
+        };
+        
+        combo_capsword
+        {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            layers = <0>;
+            key-positions = <LB0 RB0>;
+            bindings = <&caps_word>;
+            COMBO_HOOK
+        };
+        
+        combo_esc
+        {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            layers = <0>;
+            key-positions = <RM1 RM2>;
+            bindings = <&kp ESC>;
+            COMBO_HOOK
+        };
+
+    };
+};
