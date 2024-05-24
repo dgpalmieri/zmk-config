@@ -38,7 +38,6 @@
     {
         hml: hml
         {  // left-hand HRMs
-            label = "hml";
             compatible = "zmk,behavior-hold-tap"; 
             flavor = "balanced";
             tapping-term-ms = <280>;
@@ -52,7 +51,6 @@
 
         hmr: hmr 
         {  // right-hand HRMs
-            label = "hmr";
             compatible = "zmk,behavior-hold-tap"; 
             flavor = "balanced";
             tapping-term-ms = <280>;
@@ -70,7 +68,6 @@
         win_sc: windows_screenshot
         {
             compatible = "zmk,behavior-macro";
-            label = "windows_screenshot";
             #binding-cells = <0>;
             bindings = <&macro_press &kp RGUI &kp LSHFT>,
                        <&macro_tap &kp S>,
