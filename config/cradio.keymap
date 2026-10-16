@@ -18,11 +18,11 @@
 
 #include "combos.dtsi"
 
-&caps_word {  // mods deactivate caps-word, requires PR #1441
+&caps_word {  // mods deactivate caps-word, requires urob/zmk-auto-layer
     /delete-property/ ignore-modifiers;
 };
 
-&num_word {   // num-word, requires PR #1441
+&num_word {   // num-word, requires urob/zmk-auto-layer
     layers = <4>;
 };
 
