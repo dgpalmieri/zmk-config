@@ -19,12 +19,8 @@
 
 #include "combos.dtsi"
 
-&caps_word {  // mods deactivate caps-word, requires urob/zmk-auto-layer
+&caps_word {  // mods deactivate caps-word, requires PR #1451
     /delete-property/ ignore-modifiers;
-};
-
-&num_word {   // num-word, requires urob/zmk-auto-layer
-    layers = <4>;
 };
 
 &mt {
@@ -61,8 +57,8 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;           // requires PR #1423
-        };
-    }; // End @urob's config
+        }; // End @urob's config
+    };
     
     macros
     {
@@ -85,7 +81,7 @@
                 &kp  Q      &kp  W       &kp  F          &kp  P          &kp B                 &kp J        &kp  L       &kp  U       &kp  Y       &kp  QUOT
                 &hml LGUI A &hml LCTRL R &hml LALT S     &hml LSHFT T    &kp G                 &kp M        &hmr RSHFT N &hmr RALT E  &hmr RCTRL I &hmr RGUI O
                 &kp  Z      &kp  X       &kp  C          &kp  D          &kp V                 &kp K        &kp  H       &kp  CMMA    &kp  DOT     &kp  RET
-                                                         &mo  1          &kp SPC               &num_word    &mo  2
+                                                         &mo  1          &kp SPC               &num_word 4  &mo  2
             >;
         };
 
